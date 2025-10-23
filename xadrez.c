@@ -67,6 +67,30 @@ int main() {
     } while (ir <= movrainha);
 
     // ###########################################################
+    // CAVALO - movimenta-se em "L" (dois passos em uma direção e um perpendicular)
+    // ###########################################################
+    int ic, jc; // variáveis de controle dos loops
+    int movcavbaixo = 2;   // número de casas para baixo
+    int movcavesq = 1; // número de casas para esquerda
+
+    printf("\n>>>>> Movimento do CAVALO: 2 para baixo e 1 para a esquerda <<<<<\n");  // Usando loops aninhados: for + while
+
+    // Loop externo: movimento vertical (para baixo)
+    for (ic = 1; ic <= movcavbaixo; ic++) {
+        printf("Baixo (%d)\n", ic);
+
+        // Loop interno: movimento horizontal (para a esquerda)
+        int movcavfim = 1;
+        while (movcavfim <= movcavesq) {
+            // Após dois movimentos para baixo, o cavalo move-se para a esquerda
+            if (ic == movcavbaixo) {
+                printf("Esquerda (%d)\n", movcavfim);
+            }
+            movcavfim++;
+        }
+    }
+
+    // ###########################################################
     // Indicação de final do programa
     // ###########################################################
     printf("\n>>>>> MOVIMENTAÇÃO FINALIZADA! <<<<<\n");
